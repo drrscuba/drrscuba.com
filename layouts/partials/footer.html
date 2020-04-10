@@ -1,0 +1,43 @@
+<hr>
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+              <ul class="list-inline text-center">
+                {{ if isset .Site.Params "social" }}
+                {{ range .Site.Params.social }}
+                <li>
+                  <a href="{{ .url }}">
+                    <span class="fa-stack fa-lg">
+                      <i class="fa fa-circle fa-stack-2x"></i>
+                      <i class="fa fa-{{ .title }} fa-stack-1x fa-inverse"></i>
+                    </span>
+                  </a>
+                </li>
+                {{ end }}
+                {{ end }}
+              </ul>
+              <p class="copyright text-muted">{{ .Site.Copyright }}</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="https://code.iconify.design/1/1.0.5/iconify.min.js"></script>
+
+<script
+    src="https://code.jquery.com/jquery-2.2.4.min.js"
+    integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+    crossorigin="anonymous"></script>
+
+<script 
+    src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" 
+    integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" 
+    crossorigin="anonymous"></script>
+
+{{ template "_internal/google_analytics.html" . }}
+
+</body>
+
+</html>
