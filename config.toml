@@ -1,6 +1,6 @@
-baseURL = "https://drrscuba.com/"
+baseURL = "https://drrscuba.com"
 languageCode = "en-us"
-title = "Dive Rinse Repeat Scuba"
+title = "Dive Rinse Repeat Scuba, LLC"
 canonifyURLs = true
 enableGitInfo = true
 
@@ -9,12 +9,13 @@ enableGitInfo = true
 # # post excerpt
 # summaryLength = "15"
 # # disqus short name
-# disqusShortname = "" # get your shortname form here : https://disqus.com
+# disqusShortname = "" 
+# get your shortname form here : https://disqus.com
 
 # ############################# Navigation ##################################
 [[menu.main]]
 name = "About Us"
-URL = "about"
+URL = "/about"
 weight = 1
 
 # [[menu.main]]
@@ -98,3 +99,10 @@ weight = 1
 # icon = "ti-pinterest" # themify icon pack : https://themify.me/themify-icons
 # link = "#"
 
+[[params.contact]]
+URL = "mailto:info@drrscuba.com"
+Name = "info@drrscuba.com"
+
+[[params.contact]]
+URL = "tel:+18168384440"
+Name = "(816) 838-4440"

@@ -1,8 +1,14 @@
 ---
 
-image: "img/banner.jpg"
+image: "img/page-header.jpg"
 type: "page"
+title: Welcome to Dive Rinse Repeat Scuba
+description: Part of the Aqua'rd Turtle Family
 
 ---
 
-Welcome to DRR Scuba
+# Discover the underwater world
+
+
+
+# 

@@ -1,0 +1,17 @@
+.page-header {
+    background: no-repeat center center;
+    margin-bottom: 75px;
+    min-height: 250px;
+}
+
+.page-header H1 {
+    color: white;
+    margin-top: 50px;
+    text-align: center;
+}
+
+.page-header H2 {
+    color: white;
+    font-size: large;
+    text-align: center;
+}
