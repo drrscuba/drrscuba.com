@@ -1,29 +1,164 @@
-{{ partial "header.html" .}}
+{{ partial "header.html" . }}
 
-    {{if isset .Params "image" -}}
-        <header class="page-header" style="background-image: url('{{ .Site.BaseURL }}/{{ .Params.image }}')">
-    {{- else -}}
-        <header class="page-header" style="background-image: url('{{ .Site.BaseURL }}/img/page-header.jpg')">
-    {{- end }}
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    <div class="page-heading">
-                        <h1>{{ .Title }}</h1>
-                        <h2>{{ .Description }}</h2>
+<!-- Masthead-->
+<header class="masthead bg-primary text-white text-center">
+    <div class="container d-flex align-items-center flex-column">
+        <!-- Masthead Image-->
+        {{if isset .Params "image" -}}
+        <img class="masthead-avatar mb-5" src="{{ .Site.BaseURL }}/{{ .Params.image }}" />
+        {{- end }}
+        <!-- Masthead Heading-->
+        <h1 class="masthead-heading text-uppercase mb-0">{{ .Title }}</h1>
+        <!-- Icon Divider-->
+        <div class="divider-custom divider-light">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-icon"><i class="fas fa-fish"></i></div>
+            <div class="divider-custom-line"></div>
+        </div>
+        <!-- Masthead Subheading-->
+        <p class="masthead-subheading font-weight-light mb-0">{{ .Description }}</p>
+    </div>
+</header>
+
+<!-- Intro Section-->
+<section class="page-section" id="intro">
+    <div class="container">
+        <div class="row justify-content-sm-center text-center">            
+            <div class="col-lg-8 ">{{ .Content }}</div>
+        </div>
+    </div>
+</section>
+
+
+{{- $teamIndex := .Site.GetPage "/team" -}}
+{{- $teamDividerIcon := $teamIndex.Params.dividericon -}}
+
+{{- $classIndex := .Site.GetPage "/classes" -}}
+{{- $classDividerIcon := $classIndex.Params.dividericon -}}
+
+<!-- 
+{{ with .Site.GetPage "/home" }}
+{{ range .Resources.ByType "page" }}
+
+<div>{{.Title}}</div>
+
+{{ end }}
+{{ end }}
+-->
+
+{{- with $classIndex -}}
+
+<!-- classes Section-->
+<section class="page-section portfolio bg-primary text-white" id="classes">
+    <div class="container">
+        <!-- Portfolio Section Heading-->
+        <h2 class="page-section-heading text-center text-uppercase text-white mb-0">{{ .Title }}</h2>
+        <!-- Icon Divider-->
+        <div class="divider-custom divider-light">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-icon"><i class="fas {{ .Params.dividericon }}"></i></div>
+            <div class="divider-custom-line"></div>
+        </div>
+        <div class="row justify-content-md-center">
+            <div class="col-md-6 text-center">
+                {{ .Content }}
+            </div>
+        </div>
+        <!-- Portfolio Grid Items-->
+        <div class="row my-sm-3">
+
+            {{ range sort .Pages ".Params.order" }}
+
+            <!-- Portfolio Item 1-->
+            <div class="col-md-6 col-lg-4 mb-5">
+                <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#Class{{.File.BaseFileName}}Modal">
+                    <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                        <div class="portfolio-item-caption-content text-center text-white">
+                            {{.Title}}
+                        </div>
+                    </div>
+                    <img class="img-fluid" src="{{ .Site.BaseURL }}/{{ .Params.image }}" alt="{{.Title}}" />
+                    <div class="text-center">
+                        {{.Title}}
                     </div>
                 </div>
             </div>
-        </div>
-    </header>
 
-    <!-- Main Content -->
-    <div class="container">
-        <div class="row">
-            <div class="col-md-10 col-md-offset-1">
-              {{ .Content }}
-            </div>
+            {{ end }}
+
         </div>
     </div>
+</section>
+
+{{- end -}}
+
+{{- with $teamIndex -}}
+
+<!-- Team Section-->
+<section class="page-section  text-secondary mb-0" id="team">
+    <div class="container">
+        <!-- About Section Heading-->
+        <h2 class="page-section-heading text-center text-uppercase text-secondary">Our Team</h2>
+        <!-- Icon Divider-->
+        <div class="divider-custom ">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-icon"><i class="fas {{ $teamDividerIcon }}"></i></div>
+            <div class="divider-custom-line"></div>
+        </div>
+    </div>
+
+    <!-- About Section Content-->
+        <div class="row justify-content-sm-center">
+
+        {{ range sort .Pages ".Params.Order" }}
+
+        <div class="col-lg-3 mx-lg-1 col-md-5 mx-sm-3 text-center ">
+            <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#Team{{.File.BaseFileName}}Modal">
+                <img class="img-fluid rounded shadow" style="width: 10rem;" src="{{ .Params.Image }}"></img>
+            <p class="lead">{{ .Title }}</p>
+        </div>
+    </div>
+
+        {{end}}
+    </div>
+
+
+    <div class="row justify-content-sm-center">
+        <div class="col-lg-6 col-md-8 text-center my-sm-1 mx-sm-3 ">
+
+            {{ .Content }}
+
+        </div>
+        <!-- About Section Button-->
+        <!-- <div class="text-center mt-4">
+                    <a class="btn btn-xl btn-outline-light" href="https://startbootstrap.com/themes/freelancer/">
+                        <i class="fas fa-download mr-2"></i>
+                        Free Download!
+                    </a>
+                </div> -->
+    </div>
+</section>
+
+{{- end -}}
+
+
+
+{{- range $classIndex.Pages }}
+
+{{ $modalName := printf "Class%s" .File.BaseFileName }}
+
+{{ partial "homepagemodal" (dict "context" . "modalName" $modalName "dividerIcon" $classDividerIcon)}}
+
+{{end -}}
+
+
+{{ range $teamIndex.Pages }}
+
+{{ $modalName := printf "Team%s" .File.BaseFileName }}
+
+{{ partial "homepageteammodal" (dict "context" . "modalName" $modalName "dividerIcon" $teamDividerIcon)}}
+
+{{end}}
+
 
 {{ partial "footer.html" . }}

@@ -1,43 +1,48 @@
-<hr>
-<!-- Footer -->
-<footer>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-10 col-md-offset-1">
-              <ul class="list-inline text-center">
-                {{ if isset .Site.Params "social" }}
-                {{ range .Site.Params.social }}
-                <li>
-                  <a href="{{ .url }}">
-                    <span class="fa-stack fa-lg">
-                      <i class="fa fa-circle fa-stack-2x"></i>
-                      <i class="fa fa-{{ .title }} fa-stack-1x fa-inverse"></i>
-                    </span>
-                  </a>
-                </li>
-                {{ end }}
-                {{ end }}
-              </ul>
-              <p class="copyright text-muted">{{ .Site.Copyright }}</p>
-            </div>
-        </div>
-    </div>
-</footer>
+        <!-- Footer-->
+        <footer class="footer text-center">
+          <div class="container">
+              <div class="row">
+                  <!-- Footer Location-->
+                  <div class="col-lg-4 mb-5 mb-lg-0">
+                      <h4 class="text-uppercase mb-4">Contact Us</h4>
+                      <p class="lead mb-0">
+                          Fill out our <a href="https://forms.gle/EPvcDuhURQJgaeQ99">form</a> and we'll contact you as soon as we can.
+                      </p>
+                  </div>
+                  <!-- Footer Social Icons-->
+                  <div class="col-lg-4 mb-5 mb-lg-0">
+                      <h4 class="text-uppercase mb-4">Around the Web</h4>
+                      <a class="btn btn-outline-light btn-social mx-1" href="https://facebook.com/drrscuba" target="_blank"><i class="fab fa-fw fa-facebook-f"></i></a>
+                      <a class="btn btn-outline-light btn-social mx-1" href="https://twitter.com/drrscuba" target="_blank"><i class="fab fa-fw fa-twitter"></i></a>
+                      <a class="btn btn-outline-light btn-social mx-1" href="https://instagram.com/drrscuba" target="_blank"><i class="fab fa-fw fa-instagram"></i></a>
+                  </div>
+                  <!-- Footer About Text-->
+                  <div class="col-lg-4">
+                      <h4 class="text-uppercase mb-4">Friends</h4>
+                      <p class="lead mb-0">If you are in SW Missouri check out <a href="http://atscuba.com/" target="_blank">AQUA'rd Turtle SCUBA</a>
+                      </p>
+                  </div>
+              </div>
+          </div>
+      </footer>
+      <!-- Copyright Section-->
+      <div class="copyright py-4 text-center text-white">
+          <div class="container"><small>Copyright © {{ .Site.Title }} 2020</small></div>
+      </div>
+      <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes)-->
+      <div class="scroll-to-top d-lg-none position-fixed">
+          <a class="js-scroll-trigger d-block text-center text-white rounded" href="#page-top"><i class="fa fa-chevron-up"></i></a>
+      </div>
 
-<script src="https://code.iconify.design/1/1.0.5/iconify.min.js"></script>
-
-<script
-    src="https://code.jquery.com/jquery-2.2.4.min.js"
-    integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
-    crossorigin="anonymous"></script>
-
-<script 
-    src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" 
-    integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" 
-    crossorigin="anonymous"></script>
-
-{{ template "_internal/google_analytics.html" . }}
-
-</body>
-
+      <!-- Bootstrap core JS-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+      <!-- Third party plugin JS-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+      <!-- Contact form JS-->
+      <!-- <script src="assets/mail/jqBootstrapValidation.js"></script>
+      <script src="assets/mail/contact_me.js"></script> -->
+      <!-- Core theme JS-->
+      <script src="js/scripts.js"></script>
+    </body>
 </html>
