@@ -36,6 +36,9 @@
 {{- $classIndex := .Site.GetPage "/classes" -}}
 {{- $classDividerIcon := $classIndex.Params.dividericon -}}
 
+{{- $serviceIndex := .Site.GetPage "/services" -}}
+{{- $serviceDividerIcon := $serviceIndex.Params.dividericon -}}
+
 <!-- 
 {{ with .Site.GetPage "/home" }}
 {{ range .Resources.ByType "page" }}
@@ -92,15 +95,82 @@
 
 {{- end -}}
 
+
+{{- with $serviceIndex -}}
+
+
+<!-- service Section-->
+<section class="page-section text-secondary mb-0" id="services">
+    <div class="container">
+        <!-- About Section Heading-->
+        <h2 class="page-section-heading text-center text-uppercase text-secondary">{{ .Title }}</h2>
+        <!-- Icon Divider-->
+        <div class="divider-custom ">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-icon"><i class="fas {{ $serviceDividerIcon }}"></i></div>
+            <div class="divider-custom-line"></div>
+        </div>
+    </div>
+
+    {{- if isset .Params "homepagecontent" }}
+    {{ if .Params.homepagecontent }}
+    <div class="row justify-content-sm-center">
+        <div class="col-lg-6 col-md-8 text-center my-sm-1 mx-sm-3 ">
+
+            {{ .Content }}
+
+        </div>
+    </div>
+    {{ end }}
+    {{ end }}
+
+    <!-- About Section Content-->
+        <div class="row justify-content-sm-center">
+
+        {{ range sort .Pages ".Params.Order" }}
+
+        <div class="col-lg-3 mx-lg-1 col-md-5 mx-sm-3 text-center ">
+            {{- if isset .Params "Image" -}}
+                <img class="img-fluid rounded shadow" style="width: 10rem;" src="{{ .Params.Image }}"></img>
+            {{- end -}}
+            <h4>{{ .Title }}</h4>
+            <p class="lead">{{ .Description }}</p>
+            <p>{{ .Params.teaser }}</p>
+
+    {{- if isset .Params "moreinfo" }}
+    {{- if .Params.moreinfo }}
+
+    <div class="text-center mt-4">
+        <a class="btn btn-xl btn-outline-dark" href="{{ .URL }}">
+            <i class="fas fa-download mr-2"></i>
+            More
+        </a>
+    </div>
+
+{{ end }}
+{{ end }}
+
+        </div>
+
+        {{end}}
+    </div>
+
+
+</section>
+
+
+{{- end -}}
+
+
 {{- with $teamIndex -}}
 
 <!-- Team Section-->
-<section class="page-section  text-secondary mb-0" id="team">
+<section class="page-section mb-0 bg-primary text-white" id="team">
     <div class="container">
         <!-- About Section Heading-->
-        <h2 class="page-section-heading text-center text-uppercase text-secondary">Our Team</h2>
+        <h2 class="page-section-heading text-center text-uppercase text-white">Our Team</h2>
         <!-- Icon Divider-->
-        <div class="divider-custom ">
+        <div class="divider-custom divider-light">
             <div class="divider-custom-line"></div>
             <div class="divider-custom-icon"><i class="fas {{ $teamDividerIcon }}"></i></div>
             <div class="divider-custom-line"></div>

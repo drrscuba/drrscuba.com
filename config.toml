@@ -14,9 +14,24 @@ enableGitInfo = true
 
 # ############################# Navigation ##################################
 [[menu.main]]
-name = "About Us"
-URL = "/about"
-weight = 1
+name = "Intro"
+URL = "#intro"
+weight = -3
+
+[[menu.main]]
+name = "Classes"
+URL = "#classes"
+weight = -2
+
+[[menu.main]]
+name = "Services"
+URL = "#services"
+weight = -1
+
+[[menu.main]]
+name = "Our Team"
+URL = "#team"
+weight = 0
 
 # [[menu.main]]
 # name = "Service"
@@ -101,10 +116,10 @@ logo = "img/DRR-Logo-white-medium.png"
 
 [[params.contact]]
 URL = "mailto:info@drrscuba.com"
-Name = "info@drrscuba.com"
+Name = ""
 Icon = "envelope"
 
 [[params.contact]]
 URL = "tel:+18168384440"
-Name = "(816) 838-4440"
+Name = ""
 Icon = "phone"
