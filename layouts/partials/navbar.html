@@ -8,7 +8,7 @@
         {{- if isset .Site.Params "contact" -}}
             {{- range .Site.Params.contact -}}
             <li class="nav-item mx-0 mx-lg-1">
-                <a class="nav-link py-3 px-0 px-lg-3 rounded" href="{{ .URL }}"><i class="fa fa-{{ .Icon }}"></i> {{ .Name }}</a>
+                <a class="nav-link py-3 px-0 px-lg-3 rounded" href="{{ .URL }}"><i class="mdi mdi-{{ .Icon }}"></i> {{ .Name }}</a>
             </li>
             {{- end -}}
         {{- end -}}

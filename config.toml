@@ -117,7 +117,7 @@ logo = "img/DRR-Logo-white-medium.png"
 [[params.contact]]
 URL = "mailto:info@drrscuba.com"
 Name = ""
-Icon = "envelope"
+Icon = "email"
 
 [[params.contact]]
 URL = "tel:+18168384440"

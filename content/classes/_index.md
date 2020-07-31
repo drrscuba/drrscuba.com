@@ -1,7 +1,7 @@
 ---
 
 title: "Classes"
-dividerIcon: "fa-book-open"
+dividerIcon: "teach"
 
 ---
 

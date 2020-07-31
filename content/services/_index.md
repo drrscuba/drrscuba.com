@@ -1,7 +1,7 @@
 ---
 
 title: "Services"
-dividerIcon: "fa-concierge-bell"
+dividerIcon: "diving-scuba-tank"
 homepagecontent: false
 
 ---

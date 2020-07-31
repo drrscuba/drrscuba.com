@@ -1,7 +1,7 @@
 ---
 
 title: "Team"
-dividerIcon: "fa-swimmer"
+dividerIcon: "diving-scuba-flag"
 
 ---
 
