@@ -13,25 +13,25 @@ enableGitInfo = true
 # get your shortname form here : https://disqus.com
 
 # ############################# Navigation ##################################
-[[menu.main]]
-name = "Intro"
-URL = "#intro"
-weight = -3
+# [[menu.main]]
+# name = "Intro"
+# URL = "#intro"
+# weight = -3
 
-[[menu.main]]
-name = "Classes"
-URL = "#classes"
-weight = -2
+# [[menu.main]]
+# name = "Classes"
+# URL = "#classes"
+# weight = -2
 
-[[menu.main]]
-name = "Services"
-URL = "#services"
-weight = -1
+# [[menu.main]]
+# name = "Services"
+# URL = "#services"
+# weight = -1
 
-[[menu.main]]
-name = "Our Team"
-URL = "#team"
-weight = 0
+# [[menu.main]]
+# name = "Our Team"
+# URL = "#team"
+# weight = 0
 
 # [[menu.main]]
 # name = "Service"

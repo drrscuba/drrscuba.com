@@ -5,6 +5,16 @@ type: "page"
 title: Welcome
 description: Part of the Aqua'rd Turtle Family
 
+pagenav:
+  - name: "Intro"
+    url: "#intro"
+  - name: "Classes"
+    url: "#classes"
+  - name: "Services"
+    url: "#services"
+  - name: "Our Team"
+    url: "#team"
+
 ---
 
 # Scuba for everyone

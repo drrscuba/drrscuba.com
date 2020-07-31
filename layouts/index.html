@@ -194,18 +194,26 @@
 
 
     <div class="row justify-content-sm-center">
-        <div class="col-lg-6 col-md-8 text-center my-sm-1 mx-sm-3 ">
+        
+    {{- if isset .Params "homepagemoreinfo" }}
+    {{- if .Params.homepagemoreinfo }}
 
-            {{ .Content }}
+    <div class="text-center mt-4">
+        <a class="btn btn-xl btn-outline-dark" href="{{ .URL }}">
+            <i class="mdi mdi-download mr-2"></i>
+            {{ .Params.homepagemoreinfo }}
+        </a>
+    </div>
+{{ else }}
 
-        </div>
-        <!-- About Section Button-->
-        <!-- <div class="text-center mt-4">
-                    <a class="btn btn-xl btn-outline-light" href="https://startbootstrap.com/themes/freelancer/">
-                        <i class="mdi mdidownload mr-2"></i>
-                        Free Download!
-                    </a>
-                </div> -->
+<div class="col-lg-6 col-md-8 text-center my-sm-1 mx-sm-3 ">
+
+    {{ .Content }}
+
+</div>
+
+{{ end }}
+{{ end }}
     </div>
 </section>
 
