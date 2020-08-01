@@ -72,18 +72,25 @@
 
             {{ range sort .Pages ".Params.order" }}
 
+            {{ $modalName := printf "Class%s" .File.BaseFileName }}
+
             <!-- Portfolio Item 1-->
             <div class="col-md-6 col-lg-4 mb-5">
-                <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#Class{{.File.BaseFileName}}Modal">
+                <div class="portfolio-item mx-auto h-100 w-100 rounded shadow" data-toggle="modal" data-target="#{{ $modalName }}Modal">
+                    
+                    <!-- <div class="image">
+                        <img class="img img-responsive full-width" src="{{ .Site.BaseURL }}/{{ .Params.image }}" alt="{{.Title}}" />
+                    </div> -->
+                    <img class="img img-fluid thumb-post w-100 h-100 " src="{{ .Site.BaseURL }}/{{ .Params.image }}" alt="{{.Title}}" />
+
                     <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                         <div class="portfolio-item-caption-content text-center text-white">
                             {{.Title}}
                         </div>
                     </div>
-                    <img class="img-fluid" src="{{ .Site.BaseURL }}/{{ .Params.image }}" alt="{{.Title}}" />
-                    <div class="text-center">
+                    <!-- <div class="text-center">
                         {{.Title}}
-                    </div>
+                    </div> -->
                 </div>
             </div>
 
@@ -182,8 +189,10 @@
 
         {{ range sort .Pages ".Params.Order" }}
 
+        {{ $modalName := printf "Team%s" .File.BaseFileName }}
+
         <div class="col-lg-3 mx-lg-1 col-md-5 mx-sm-3 text-center ">
-            <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#Team{{.File.BaseFileName}}Modal">
+            <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#{{ $modalName }}Modal">
                 <img class="img-fluid rounded shadow" style="width: 10rem;" src="{{ .Params.Image }}"></img>
             <p class="lead">{{ .Title }}</p>
         </div>

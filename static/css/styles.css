@@ -10330,3 +10330,28 @@ form .row:first-child .floating-label-form-group {
   text-align: center;
   width: 1.25em;
   }
+
+.thumb-post {
+  object-fit: cover; /* Do not scale the image */
+  object-position: center; /* Center the image within the element */
+  overflow: hidden;
+  /* height: 255px;
+  width: 255px; */
+  margin-bottom: 1rem;
+}
+
+.image{
+  position:relative;
+  overflow:hidden;
+  padding-bottom:100%;
+}
+.image img{
+  position: absolute;
+  object-position: center; /* Center the image within the element */
+    object-fit: cover;
+    /* min-width: 100%;
+    min-height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%); */
+}

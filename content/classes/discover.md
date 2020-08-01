@@ -2,8 +2,8 @@
 
 image: "img/classes/discover.jpg"
 type: "class"
-title: Discover
-description: Discover Scuba Diving
+title: Discover Scuba Diving
+description: Your First Breathe Underwater
 
 order: 1
 

@@ -1,9 +1,9 @@
 ---
 
-image: "img/classes/owsd.jpg"
+image: "img/classes/OWD_510x510.jpg"
 type: "class"
-title: Open Water
-description: Open Water Diver
+title: Open Water Diver
+description: Begin Your Diving Adventure
 
 order: 2
 ---
