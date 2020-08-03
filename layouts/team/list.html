@@ -1,0 +1,47 @@
+{{ partial "header.html" . }}
+
+{{ partial "title.html" . }}
+
+<!-- Intro Section-->
+<section class="page-section " id="intro">
+    <div class="container">
+        <div class="row justify-content-sm-center text-center">            
+            <div class="col-lg-8 ">{{ .Content }}</div>
+        </div>
+    </div>
+</section>
+
+<section class="page-section" id="team">
+    <div class="container">
+
+        <h1 class=" text-primary text-uppercase mb-0 text-center" id="portfolioModal1Label">Meet Our Team</h1>
+
+{{ range sort .Pages ".Params.Order" }}
+
+        <div class="divider-custom">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-icon"><i class="mdi mdi-{{ .Parent.Params.dividerIcon }}"></i></div>
+            <div class="divider-custom-line"></div>
+        </div>
+
+        <div class="row justify-content-sm-center text-sm-center text-md-left">
+            <div class="col-lg-3 col-md-4 ">
+                <img class="img-fluid rounded shadow float-md-left mx-5" style="width: 10rem;" src="{{ .Params.image }}"></img>
+            </div>
+
+            <div class="col-lg-5 col-md-6 my-sm-3 my-md-0">
+                <h3 class=" text-primary text-uppercase mb-0 " id="portfolioModal1Label">{{ .Title }}</h3>
+                <h4 class=" text-secondary text-uppercase mb-0 " id="portfolioModal1Label">{{ .Description }}</h4>
+
+                <p class="my-3">{{ .Content }}</p>
+            </div>
+        </div>
+
+{{ end }}
+
+</div>
+
+</section>
+
+
+{{ partial "footer.html" . }}

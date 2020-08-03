@@ -1,6 +1,6 @@
 ---
 
-image: "img/team/hs-lisa.jpg"
+image: "/img/team/hs-lisa.jpg"
 title: Lisa Newman
 description: Master Scuba Diver
 

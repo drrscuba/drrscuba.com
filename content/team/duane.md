@@ -1,6 +1,6 @@
 ---
 
-image: "img/team/hs-duane.jpg"
+image: "/img/team/hs-duane.jpg"
 type: "team"
 title: Duane Newman
 description: Master Scuba Diver Trainer
