@@ -3,7 +3,7 @@
 image: "img/classes/discover.jpg"
 type: "class"
 title: Discover Scuba Diving
-description: Your First Breathe Underwater
+description: Your First Breath Underwater
 
 order: 1
 
