@@ -130,7 +130,7 @@
     {{- if .Params.moreinfo }}
 
     <div class="text-center mt-4">
-        <a class="btn btn-xl btn-outline-dark" href="{{ .URL }}">
+        <a class="btn btn-xl btn-outline-dark" href="{{ .Permalink }}">
             <i class="mdi mdi-download mr-2"></i>
             More
         </a>
@@ -191,7 +191,7 @@
             {{- if .Params.homepagemoreinfo }}
 
                 <div class="text-center mt-4">
-                    <a class="btn btn-xl btn-outline-dark" href="{{ .URL }}">
+                    <a class="btn btn-xl btn-outline-dark" href="{{ .Permalink }}">
                         <i class="mdi mdi-download mr-2"></i>
                         {{ .Params.homepagemoreinfo }}
                     </a>

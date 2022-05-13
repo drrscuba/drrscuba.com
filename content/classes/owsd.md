@@ -6,6 +6,10 @@ title: Open Water Diver
 description: Begin Your Diving Adventure
 
 order: 2
+
+#cost: 490
+age: 10
+
 ---
 
 During the PADI Open Water Diver course, you’ll learn what you need to know to explore the underwater world using scuba. The PADI Open Water Diver course includes three parts: Knowledge Development, Confined Water Dives, and Open Water Dives. 

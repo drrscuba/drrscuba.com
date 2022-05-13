@@ -6,16 +6,18 @@
                   <div class="col-lg-4 mb-5 mb-lg-0">
                       <h4 class="text-uppercase mb-4">Contact Us</h4>
                       <p class="lead mb-0">
-                          Fill out our <a href="https://forms.gle/EPvcDuhURQJgaeQ99">form</a> and we'll contact you as soon as we can.
+                          Fill out our <a href="https://forms.gle/JqLr6RpoUJMpitqz8" target="_blank">form</a> and we'll contact you as soon as we can.
                       </p>
                   </div>
                   <!-- Footer Social Icons-->
                   <div class="col-lg-4 mb-5 mb-lg-0">
-                      <h4 class="text-uppercase mb-4">Around the Web</h4>
-                      <a class="btn btn-outline-light btn-social mx-1" href="https://facebook.com/drrscuba" target="_blank"><i class="mdi mdi-facebook"></i></a>
-                      <a class="btn btn-outline-light btn-social mx-1" href="https://twitter.com/drrscuba" target="_blank"><i class="mdi mdi-twitter"></i></a>
-                      <a class="btn btn-outline-light btn-social mx-1" href="https://instagram.com/drrscuba" target="_blank"><i class="mdi mdi-instagram"></i></a>
-                  </div>
+                      <h4 class="text-uppercase mb-4">Around the Web</h4>                            
+                      {{- if isset .Site.Params "social" -}}
+                        {{- range .Site.Params.social -}}
+                          <a class="btn btn-outline-light btn-social mx-1" href="{{ .link }}" target="_blank"><i class="mdi {{ .icon }}" title="{{ .name }}"></i></a>
+                        {{- end -}}
+                      {{- end -}}
+                </div>
                   <!-- Footer About Text-->
                   <div class="col-lg-4">
                       <h4 class="text-uppercase mb-4">Friends</h4>

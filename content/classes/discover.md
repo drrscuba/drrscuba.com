@@ -6,6 +6,8 @@ title: Discover Scuba Diving
 description: Your First Breath Underwater
 
 order: 1
+#cost: 30
+age: 10
 
 ---
 
