@@ -4,6 +4,7 @@ image: "/img/team/hs-duane.jpg"
 type: "team"
 title: Duane Newman
 description: Master Scuba Diver Trainer
+group: Owner, Instructor
 
 order: 2
 

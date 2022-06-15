@@ -170,7 +170,7 @@
     <!-- Team Members -->
     <div class="container col-12 text-center ">
         <div class="row justify-content-center ">
-            {{ range sort .Pages ".Params.Order" }}
+            {{ range (where .Pages ".Params.Order" "gt" 0).ByParam "Order"  }}
 
                 {{ $modalName := printf "Team%s" .File.BaseFileName }}
 
@@ -223,7 +223,7 @@
 {{end -}}
 
 
-{{ range $teamIndex.Pages }}
+{{ range where $teamIndex.Pages ".Params.Order" "gt" 0 }}
 
 {{ $modalName := printf "Team%s" .File.BaseFileName }}
 

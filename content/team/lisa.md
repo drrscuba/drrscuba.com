@@ -3,6 +3,7 @@
 image: "/img/team/hs-lisa.jpg"
 title: Lisa Newman
 description: Master Scuba Diver
+group: Owner, Shop Manager
 
 order: 1
 ---
