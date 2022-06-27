@@ -31,4 +31,4 @@ Don't let anyone tell you that you cannot do something because of who you are. W
 
 Dive, Rinse, Repeat
 
-It's what we love, it's what we do! Once you the scuba bug bites we think you'll agree!
+It's what we love, it's what we do! Once the scuba bug bites we think you'll agree!
