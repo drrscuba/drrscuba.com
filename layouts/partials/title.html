@@ -2,10 +2,12 @@
 <header class="masthead bg-primary text-white text-center row pb-5">
     <div class="container d-flex align-items-center flex-column">
         
-        {{if isset .Params "image" -}}
-            <img class="masthead-avatar mb-5" src="{{ .Site.BaseURL }}/{{ .Params.image }}" />
-        {{- else -}}
-            <img class="masthead-avatar mb-5" src="{{ .Site.BaseURL }}/{{ .Site.Params.logo }}" />
+        {{if not (isset .Params "noheaderimage") -}}
+            {{if isset .Params "image" -}}
+                <img class="masthead-avatar mb-5" src="{{ .Site.BaseURL }}/{{ .Params.image }}" />
+            {{- else -}}
+                <img class="masthead-avatar mb-5" src="{{ .Site.BaseURL }}/{{ .Site.Params.logo }}" />
+            {{- end }}
         {{- end }}
 
         <h1 class="masthead-heading text-uppercase mb-0">{{ .Title }}</h1>

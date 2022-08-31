@@ -3,6 +3,7 @@
 title: "Meet Our Team"
 dividerIcon: "diving-scuba-flag"
 HomePageMoreInfo: "More about our team"
+noheaderimage: true
 
 ---
 

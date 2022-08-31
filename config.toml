@@ -4,6 +4,9 @@ title = "Dive Rinse Repeat Scuba, LLC"
 canonifyURLs = true
 enableGitInfo = true
 
+[markup.goldmark.renderer]
+  unsafe = true
+  
 # # post pagination
 # paginate = "6"
 # # post excerpt
