@@ -6,10 +6,12 @@ title: Welcome
 description: Dive Rinse Repeat Scuba, LLC
 
 pagenav:
-  - name: "Intro"
-    url: "#intro"
   - name: "Classes"
     url: "#classes"
+  - name: "Events"
+    url: "#events"
+  - name: "Travel"
+    url: "#travel"
   - name: "Services"
     url: "#services"
   - name: "Our Team"

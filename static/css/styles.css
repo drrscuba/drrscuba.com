@@ -130,7 +130,9 @@ dd {
 }
 
 blockquote {
-  margin: 0 0 1rem;
+  border-left: 4px solid #1abc9c;
+  padding-left: 1em;
+  margin: 1rem;
 }
 
 b,

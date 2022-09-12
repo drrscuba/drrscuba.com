@@ -1,0 +1,38 @@
+{{ partial "header.html" . }}
+
+<header class="masthead bg-primary text-white text-center row pb-5">
+    <div class="container d-flex align-items-center flex-column">
+        
+        {{if not (isset .Params "noheaderimage") -}}
+            {{if isset .Params "image" -}}
+                <img class="masthead-avatar mb-5" src="{{ .Site.BaseURL }}/{{ .Params.image }}" />
+            {{- else -}}
+                <img class="masthead-avatar mb-5" src="{{ .Site.BaseURL }}/{{ .Site.Params.logo }}" />
+            {{- end }}
+        {{- end }}
+
+        <h1 class="masthead-heading text-uppercase mb-0">{{ .Title }}</h1>
+
+        <div class="divider-custom divider-light">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-icon">
+                <i class="mdi mdi-{{if isset .Params "dividericon" -}}{{ .Params.dividericon }}{{- else -}}fish{{- end }}"></i>
+            </div>
+            <div class="divider-custom-line"></div>
+        </div>
+
+        <p class="masthead-subheading font-weight-light mb-0">{{ .Description }}</p>
+        <p class="masthead-subheading font-weight-light mb-0">{{ dateFormat "Jan 2, 2006" .Params.tripStartDate }} - {{ dateFormat "Jan 2, 2006" .Params.tripEndDate }}</p>
+    </div>
+</header>
+
+<!-- Intro Section-->
+<section class="page-section" id="intro">
+    <div class="container">
+        <div class="row justify-content-sm">            
+            <div class="col-lg-12 ">{{ .Content }}</div>
+        </div>
+    </div>
+</section>
+
+{{ partial "footer.html" . }}

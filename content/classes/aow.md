@@ -4,6 +4,7 @@ image: "img/classes/AOW_255x255.jpg"
 type: "class"
 title: Advanced Open Water Diver
 description: New Adventures 
+headless: true
 
 order: 3
 

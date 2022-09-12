@@ -11,6 +11,8 @@
     </div>
 </section>
 
+{{- $travelIndex := .Site.GetPage "/travel" -}}
+
 {{- $eventsIndex := .Site.GetPage "/events" -}}
 {{- $eventsDividerIcon := $eventsIndex.Params.dividericon -}}
 
@@ -87,6 +89,118 @@
 {{- end -}}
 
 
+{{- with $eventsIndex -}}
+
+
+<!-- service Section-->
+<section class="page-section row text-secondary my-1 mx-1" id="events">    
+    <div class="container">
+        <!-- About Section Heading-->
+        <h2 class="page-section-heading text-center text-uppercase text-secondary">{{ .Title }}</h2>
+        <!-- Icon Divider-->
+        <div class="divider-custom ">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-icon"><i class="mdi mdi-{{ $eventsDividerIcon }}"></i></div>
+            <div class="divider-custom-line"></div>
+        </div>
+    </div>
+
+    {{- if isset .Params "teaser" }}
+        <div class="col-sm-10 offset-sm-1 col-md-6 offset-md-3 text-center">
+
+            {{ .Params.teaser }}
+
+        </div>
+    {{ end }}
+
+
+    <div class="container col-12 text-center ">
+    
+            
+        {{- if isset .Params "homepagemoreinfo" }}
+            {{- if .Params.homepagemoreinfo }}
+
+                <div class="text-center mt-4">
+                    <a class="btn btn-xl btn-outline-dark" href="{{ .Permalink }}">
+                        <i class="mdi mdi-{{ .Params.dividericon }} mr-2"></i>
+                        {{ .Params.homepagemoreinfo }}
+                    </a>
+                </div>
+
+            {{ else }}
+
+                <div class="col-lg-6 col-md-8 text-center my-sm-1 mx-sm-3 ">
+                    {{ .Content }}
+                </div>
+
+            {{ end }}
+        {{ end }}
+
+    </div>
+
+
+</section>
+
+
+{{- end -}}
+
+
+{{- with $travelIndex -}}
+
+
+<!-- service Section-->
+<section class="page-section row mb-0 bg-primary text-white" id="travel">    
+    <div class="container">
+        <!-- About Section Heading-->
+        <h2 class="page-section-heading text-center text-uppercase text-secondary">{{ .Title }}</h2>
+        <!-- Icon Divider-->
+        <div class="divider-custom ">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-icon"><i class="mdi mdi-{{ .Params.dividericon }}"></i></div>
+            <div class="divider-custom-line"></div>
+        </div>
+    </div>
+
+    {{- if isset .Params "teaser" }}
+        <div class="col-sm-10 offset-sm-1 col-md-6 offset-md-3 text-center">
+
+            {{ .Params.teaser }}
+
+        </div>
+    {{ end }}
+
+
+    <div class="container col-12 text-center ">
+    
+            
+        {{- if isset .Params "homepagemoreinfo" }}
+            {{- if .Params.homepagemoreinfo }}
+
+                <div class="text-center mt-4">
+                    <a class="btn btn-xl btn-outline-dark" href="{{ .Permalink }}">
+                        <i class="mdi mdi-{{ .Params.dividericon }} mr-2"></i>
+                        {{ .Params.homepagemoreinfo }}
+                    </a>
+                </div>
+
+            {{ else }}
+
+                <div class="col-lg-6 col-md-8 text-center my-sm-1 mx-sm-3 ">
+                    {{ .Content }}
+                </div>
+
+            {{ end }}
+        {{ end }}
+
+    </div>
+
+
+</section>
+
+
+{{- end -}}
+
+
 {{- with $serviceIndex -}}
 
 
@@ -116,7 +230,7 @@
     {{ end }}
 
     <!-- About Section Content-->
-        <div class="row justify-content-sm-center">
+    <div class="row justify-content-sm-center">
 
         {{ range sort .Pages ".Params.Order" }}
 
@@ -128,18 +242,18 @@
             <p class="lead">{{ .Description }}</p>
             <p>{{ .Params.teaser }}</p>
 
-    {{- if isset .Params "moreinfo" }}
-    {{- if .Params.moreinfo }}
+            {{- if isset .Params "moreinfo" }}
+            {{- if .Params.moreinfo }}
 
-    <div class="text-center mt-4">
-        <a class="btn btn-xl btn-outline-dark" href="{{ .Permalink }}">
-            <i class="mdi mdi-download mr-2"></i>
-            More
-        </a>
-    </div>
+            <div class="text-center mt-4">
+                <a class="btn btn-xl btn-outline-dark" href="{{ .Permalink }}">
+                    <i class="mdi mdi-download mr-2"></i>
+                    More
+                </a>
+            </div>
 
-{{ end }}
-{{ end }}
+        {{ end }}
+        {{ end }}
 
         </div>
 
@@ -233,60 +347,5 @@
 
 {{end}}
 
-
-{{- with $eventsIndex -}}
-
-
-<!-- service Section-->
-<section class="page-section row text-secondary my-1 mx-1" id="events">    
-    <div class="container">
-        <!-- About Section Heading-->
-        <h2 class="page-section-heading text-center text-uppercase text-secondary">{{ .Title }}</h2>
-        <!-- Icon Divider-->
-        <div class="divider-custom ">
-            <div class="divider-custom-line"></div>
-            <div class="divider-custom-icon"><i class="mdi mdi-{{ $eventsDividerIcon }}"></i></div>
-            <div class="divider-custom-line"></div>
-        </div>
-    </div>
-
-    {{- if isset .Params "teaser" }}
-        <div class="col-sm-10 offset-sm-1 col-md-6 offset-md-3 text-center">
-
-            {{ .Params.teaser }}
-
-        </div>
-    {{ end }}
-
-
-    <div class="container col-12 text-center ">
-    
-            
-        {{- if isset .Params "homepagemoreinfo" }}
-            {{- if .Params.homepagemoreinfo }}
-
-                <div class="text-center mt-4">
-                    <a class="btn btn-xl btn-outline-dark" href="{{ .Permalink }}">
-                        <i class="mdi mdi-{{ .Params.dividericon }} mr-2"></i>
-                        {{ .Params.homepagemoreinfo }}
-                    </a>
-                </div>
-
-            {{ else }}
-
-                <div class="col-lg-6 col-md-8 text-center my-sm-1 mx-sm-3 ">
-                    {{ .Content }}
-                </div>
-
-            {{ end }}
-        {{ end }}
-
-    </div>
-
-
-</section>
-
-
-{{- end -}}
 
 {{ partial "footer.html" . }}
