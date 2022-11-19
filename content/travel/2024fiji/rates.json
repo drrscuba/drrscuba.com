@@ -1,0 +1,54 @@
+{
+    "deposit": 200,
+    "paymentdates": [
+        { "date": "2023-05-01", "note": "1st 20% Rate" },
+        { "date": "2023-08-01", "note": "2nd 20% Rate" },
+        { "date": "2023-11-01", "note": "3rd 20% Rate" },
+        { "date": "2024-02-01", "note": "4th 20% Rate" },
+        { "date": "2024-05-01", "note": "Full Balance" }
+    ],
+    "rateoccupancy": "pp",
+    "rates": [
+        {
+            "roomType": "Deluxe Room",
+            "rateOptions": [
+                {
+                    "name": "Double Diver",
+                    "rate": 2700.00
+                },
+                {
+                    "name": "Double Non-Diver",
+                    "rate": 1975.00
+                },
+                {
+                    "name": "Single Diver",
+                    "rate": 3700.00
+                }
+            ]
+        },
+        {
+            "roomType": "Premium Room",
+            "rateOptions": [
+                {
+                    "name": "Double Diver",
+                    "rate": 2900.00
+                },
+                {
+                    "name": "Double Non-Diver",
+                    "rate": 2150.00
+                },
+                {
+                    "name": "Single Diver",
+                    "rate": 4050.00
+                }
+            ]
+        }
+    ],
+    "details": [
+        "All rates are per-person & based upon full occupancy",
+        "Option available for families of 4 to 6",
+        "All payments are non-refundable after 180 days prior to stay",
+        "Joining after a payment date requires the deposit and total of all payments due at that time"
+    ]
+}
+

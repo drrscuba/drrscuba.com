@@ -1,0 +1,41 @@
+[
+    {
+        "name": "Round trip Nadi airport/resort transfers"
+    },
+    {
+        "name": "Welcome drink on arrival"
+    },
+    {
+        "name": "7 nights accommodations at Volivoli Beach Resort"
+    },
+    {
+        "name": "Full meal plan",
+        "details": [
+            "3 meals daily with juice, milk, rain water, coffee, and tea at breakfast."
+        ]
+    },
+    {
+        "name": "Beach BBQ"
+    },
+    {
+        "name": "Traditional Meke performance"
+    },
+    {
+        "name": "Hosted group event on last night"
+    },
+    {
+        "name": "Free use of kayaks and participation in a variety of complimentary resort activities"
+    },
+    {
+        "name": "Resort and Government taxes"
+    },
+    {
+        "name": "Divers will enjoy",
+        "details": [
+            "3 days of 2 tank boat diving",
+            "2 days of 3 tank boat diving",
+            "includes tanks, weights, and dive guide",
+            "Unlimited shore diving on dive days (reserve tanks 24 hours prior)"
+        ]
+    }
+]

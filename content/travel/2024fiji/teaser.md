@@ -1,0 +1,1 @@
+Come to Fiji with us and stay at the award winning 4-star Fiji dive resort Volivoli Beach Resort. The trip includes a 7-night stay, 6 days of boat diving (up to 12 dives) plus unlimited shore diving, 3 meals daily, beach BBQ, traditional Meke performance, and more.

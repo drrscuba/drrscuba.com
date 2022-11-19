@@ -11,7 +11,7 @@ pagenav:
   - name: "Events"
     url: "#events"
   - name: "Travel"
-    url: "#travel"
+    url: "/travel"
   - name: "Services"
     url: "#services"
   - name: "Our Team"

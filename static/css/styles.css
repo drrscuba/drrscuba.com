@@ -10376,3 +10376,18 @@ form .row:first-child .floating-label-form-group {
 #intro h4 {
   color: #2c3e50 !important;
 }
+
+
+img[src$='#floatleft']
+{
+	float:left;
+  max-width: 35%;
+  padding-right: 2em;
+}
+
+img[src$='#floatright']
+{
+	float:right;
+  max-width: 35%;
+  padding-left: 2em;
+}

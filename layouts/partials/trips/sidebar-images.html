@@ -1,0 +1,11 @@
+{{ with .sidebarImages }}
+{{ $isFirst := true }}
+
+<div class="col-lg-4 ">
+    {{ range $sidebarImage := . }}
+    <img class=" {{ if not $isFirst }} pt-3 {{ end }}" style="max-width: 100%;" src="{{ $sidebarImage }}"/>
+    {{ $isFirst = false }}
+    {{ end }}
+</div>
+
+{{ end }}

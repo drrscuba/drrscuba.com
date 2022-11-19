@@ -35,7 +35,7 @@
                 <h5 class=" text-secondary text-uppercase mb-0 " id="portfolioModal1Label">{{ dateFormat "Jan 2, 2006" .Params.tripStartDate }} - {{ dateFormat "Jan 2, 2006" .Params.tripEndDate }}</h5>
                 <h6 class=" text-secondary text-uppercase mb-0" id="portfolioModal1Label">{{ .Description }}</h6>
 
-                <p class="my-3">{{ .Params.teaser }}</p>
+                <p class="my-3">{{ (.Resources.GetMatch "teaser.md").Content }}</p>
             </div>
         </div>
 {{ end }}
