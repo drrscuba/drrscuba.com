@@ -12,11 +12,20 @@
                       </p>
                   </div>
                   <!-- Footer Social Icons-->
-                  <div class="col-lg-4 mb-5 mb-lg-0">
+                  <div class="col-lg-4 pl-0 pr-0  mb-5 mb-lg-0">
                       <h4 class="text-uppercase mb-4">Around the Web</h4>                            
                       {{- if isset .Site.Params "social" -}}
+                        {{- $socialCount := len .Site.Params.social -}}
+                        {{- $socialMid := add (math.Floor (div $socialCount 2)) 1 -}}
+                        {{- $socialNewline := false -}}
+                        {{- $socialIndex := 0 -}}
                         {{- range .Site.Params.social -}}
-                          <a class="btn btn-outline-light btn-social mx-1" href="{{ .link }}" target="_blank"><i class="mdi {{ .icon }}" title="{{ .name }}"></i></a>
+                          {{- if and (ge $socialIndex $socialMid) (not $socialNewline) -}}
+                          {{- $socialNewline = true -}}
+                          <br/>
+                          {{- end -}}
+                          <a class="btn btn-outline-light btn-social mx-1 my-1" href="{{ .link }}" target="_blank"><i class="mdi {{ .icon }}" title="{{ .name }}"></i></a>
+                          {{- $socialIndex = add $socialIndex 1 -}}                          
                         {{- end -}}
                       {{- end -}}
                 </div>
@@ -31,7 +40,7 @@
       </footer>
       <!-- Copyright Section-->
       <div class="row copyright py-4 text-center text-white">
-          <div class="container"><small>Copyright © {{ .Site.Title }} 2020</small></div>
+          <div class="container"><small>&copy; {{ .Site.Title }} 2020-{{ now.Format "2006"}}</small></div>
       </div>
       <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes)-->
       <div class="scroll-to-top d-lg-none position-fixed">
