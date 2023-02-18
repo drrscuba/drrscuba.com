@@ -13,4 +13,4 @@ Fiji currently requires all visitors to show proof of travel insurance. We alway
 
 ### COVID Advisory
 
-Fiji currently requires travelers to have received the COVID vaccination, but continues to relax their entry requirements. More information can be found on the [Fiji travel page](https://www.fiji.travel/covid-19/travelling-to-fiji):
+We are excited that Fiji now has zero restrictions for travel! Effective Feb 14, 2023 Fiji no longer requires travelers to provide proof of COVID-19 vaccination to enter the country! More information can be found on the [Fiji travel page](https://www.fiji.travel/covid-19/travelling-to-fiji).
