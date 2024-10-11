@@ -1,351 +1,67 @@
-{{ partial "header.html" . }}
+{{ define "main" }}
 
-{{ partial "title.html" . }}
+{{ if .Site.Params.logo }}
+    <img src="{{ .Site.Params.logo }}" alt="{{ .Site.Title }}" class="img-fluid mx-auto d-block mt-3 mb-3" style="max-width: 50%;">
+{{ else }}
+    <h1>{{ .Site.Title }}</h1>
+{{ end }}
 
-<!-- Intro Section-->
-<section class="page-section row" id="intro">
-    <div class="container">
-        <div class="row justify-content-sm-center text-center">            
-            <div class="col-lg-8 ">{{ .Content }}</div>
+<p class="welcomeText">{{ .Site.Params.welcomeText }}</p>
+
+{{ if .Site.Params.trips }}
+    <p>Check out our upcoming group travel!</p>
+    {{ range .Site.Params.trips }}
+        {{ if .activated }}
+        <div id="iconList" class="mt-3">
+            <div id="iconListEntry" class="card">
+                <div class="card-body cursorPointer" onclick="location.href = '{{ .url }}'">
+                    <!-- <p class="card-text"><a href="{{ .url }}" target="_self" class="iconLink"><i class="fa-5x {{ .icon }}"></i></a></p> -->
+                    <p class="card-text"><a href="{{ .url }}" target="_self" class="iconLink">{{ .name | safeHTML }}</a></p>
+                </div>
+            </div>
         </div>
+        {{ end }}
+    {{ end }}
+{{ end }}
+
+{{ if .Site.Params.searchEngines }}
+    {{ range .Site.Params.searchEngines }}
+        {{ if .activated }}
+            <form id="search-form-{{ .name }}" class="mb-3" action="{{ .url }}" method="get">
+                <input id="search-bar-{{ .name }}" class="form-control" type="text" autofocus type="text" placeholder="Search {{ .name }}" name="{{ cond (isset . "searchkey") .searchkey "q" }}" alt="Search {{ .name }}" onkeydown="if(event.keyCode === 13) { this.form.submit(); return false; }">
+            </form>
+        {{ end }}
+    {{ end }}
+{{ end }}
+
+{{ if .Site.Params.startPageColumns }}
+    <div id="groupList" class="card-deck mt-3">
+        {{ range .Site.Data.links }}
+            <div id="groupListEntry" class="card">
+                <div class="card-body">
+                    <h5 class="card-title groupTitle">{{ .group }}</h5>                        
+                    <ul class="list-group list-group-flush groupListList">
+                        {{ range .items }}
+                            <li class="list-group-item groupListListItem"><a href="{{ .url }}" target="_self" class="groupLink"><i class="{{ .icon }}"></i>&nbsp;<span class="groupText">{{ .title | safeHTML }}</span></a></li>
+                        {{ end }}
+                    </ul>
+                </div>
+            </div>
+        {{ end }}
     </div>
-</section>
-
-{{- $travelIndex := .Site.GetPage "/travel" -}}
-
-{{- $eventsIndex := .Site.GetPage "/events" -}}
-{{- $eventsDividerIcon := $eventsIndex.Params.dividericon -}}
-
-{{- $teamIndex := .Site.GetPage "/team" -}}
-{{- $teamDividerIcon := $teamIndex.Params.dividericon -}}
-
-{{- $classIndex := .Site.GetPage "/classes" -}}
-{{- $classDividerIcon := $classIndex.Params.dividericon -}}
-
-{{- $serviceIndex := .Site.GetPage "/services" -}}
-{{- $serviceDividerIcon := $serviceIndex.Params.dividericon -}}
-
-<!-- 
-{{ with .Site.GetPage "/home" }}
-{{ range .Resources.ByType "page" }}
-
-<div>{{.Title}}</div>
+{{ else }}
+    {{ range .Site.Data.links }}
+        <div id="iconList" class="card-columns mt-3">
+            {{ range .items }}
+                <div id="iconListEntry" class="card">
+                    <div class="card-body cursorPointer" onclick="location.href = '{{ .url }}'">
+                        <p class="card-text"><a href="{{ .url }}" target="_self" class="iconLink"><i class="fa-5x {{ .icon }}"></i></a></p>
+                        <p class="card-text"><a href="{{ .url }}" target="_self" class="iconLink">{{ .title | safeHTML }}</a></p>
+                    </div>
+                </div>
+            {{ end }}
+        </div>
+    {{ end }}
+{{ end }}
 
 {{ end }}
-{{ end }}
--->
-
-{{- with $classIndex -}}
-
-<!-- classes Section-->
-<section class="page-section portfolio bg-primary text-white row" id="classes">
-    <div class="container">
-        <!-- Portfolio Section Heading-->
-        <h2 class="page-section-heading text-center text-uppercase text-white mb-0">{{ .Title }}</h2>
-        <!-- Icon Divider-->
-        <div class="divider-custom divider-light">
-            <div class="divider-custom-line"></div>
-            <div class="divider-custom-icon"><i class="mdi mdi-{{ .Params.dividericon }}"></i></div>
-            <div class="divider-custom-line"></div>
-        </div>
-        <div class="row justify-content-md-center">
-            <div class="col-md-6 text-center">
-                {{ .Content }}
-            </div>
-        </div>
-        <!-- Portfolio Grid Items-->
-        <div class="row my-sm-3">
-
-            {{ range sort .Pages ".Params.order" }}
-
-            {{ $modalName := printf "Class%s" .File.BaseFileName }}
-
-            <!-- Portfolio Item 1-->
-            <div class="col-md-6 col-lg-4 mb-5">
-                <div class="portfolio-item mx-auto h-100 w-100 rounded shadow" data-toggle="modal" data-target="#{{ $modalName }}Modal">
-                    
-                    <!-- <div class="image">
-                        <img class="img img-responsive full-width" src="{{ .Site.BaseURL }}/{{ .Params.image }}" alt="{{.Title}}" />
-                    </div> -->
-                    <img class="img img-fluid thumb-post w-100 h-100 " src="{{ .Site.BaseURL }}/{{ .Params.image }}" alt="{{.Title}}" />
-
-                    <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                        <div class="portfolio-item-caption-content text-center text-white">
-                            {{.Title}}
-                        </div>
-                    </div>
-                    <!-- <div class="text-center">
-                        {{.Title}}
-                    </div> -->
-                </div>
-            </div>
-
-            {{ end }}
-
-        </div>
-    </div>
-</section>
-
-{{- end -}}
-
-
-{{- with $eventsIndex -}}
-
-
-<!-- service Section-->
-<section class="page-section row text-secondary my-1 mx-1" id="events">    
-    <div class="container">
-        <!-- About Section Heading-->
-        <h2 class="page-section-heading text-center text-uppercase text-secondary">{{ .Title }}</h2>
-        <!-- Icon Divider-->
-        <div class="divider-custom ">
-            <div class="divider-custom-line"></div>
-            <div class="divider-custom-icon"><i class="mdi mdi-{{ $eventsDividerIcon }}"></i></div>
-            <div class="divider-custom-line"></div>
-        </div>
-    </div>
-
-    {{- if isset .Params "teaser" }}
-        <div class="col-sm-10 offset-sm-1 col-md-6 offset-md-3 text-center">
-
-            {{ .Params.teaser }}
-
-        </div>
-    {{ end }}
-
-
-    <div class="container col-12 text-center ">
-    
-            
-        {{- if isset .Params "homepagemoreinfo" }}
-            {{- if .Params.homepagemoreinfo }}
-
-                <div class="text-center mt-4">
-                    <a class="btn btn-xl btn-outline-dark" href="{{ .Permalink }}">
-                        <i class="mdi mdi-{{ .Params.dividericon }} mr-2"></i>
-                        {{ .Params.homepagemoreinfo }}
-                    </a>
-                </div>
-
-            {{ else }}
-
-                <div class="col-lg-6 col-md-8 text-center my-sm-1 mx-sm-3 ">
-                    {{ .Content }}
-                </div>
-
-            {{ end }}
-        {{ end }}
-
-    </div>
-
-
-</section>
-
-
-{{- end -}}
-
-
-{{- with $travelIndex -}}
-
-
-<!-- service Section-->
-<section class="page-section row mb-0 bg-primary text-white" id="travel">    
-    <div class="container">
-        <!-- About Section Heading-->
-        <h2 class="page-section-heading text-center text-uppercase text-secondary">{{ .Title }}</h2>
-        <!-- Icon Divider-->
-        <div class="divider-custom ">
-            <div class="divider-custom-line"></div>
-            <div class="divider-custom-icon"><i class="mdi mdi-{{ .Params.dividericon }}"></i></div>
-            <div class="divider-custom-line"></div>
-        </div>
-    </div>
-
-    {{- if isset .Params "teaser" }}
-        <div class="col-sm-10 offset-sm-1 col-md-6 offset-md-3 text-center">
-
-            {{ .Params.teaser }}
-
-        </div>
-    {{ end }}
-
-
-    <div class="container col-12 text-center ">
-    
-            
-        {{- if isset .Params "homepagemoreinfo" }}
-            {{- if .Params.homepagemoreinfo }}
-
-                <div class="text-center mt-4">
-                    <a class="btn btn-xl btn-outline-dark" href="{{ .Permalink }}">
-                        <i class="mdi mdi-{{ .Params.dividericon }} mr-2"></i>
-                        {{ .Params.homepagemoreinfo }}
-                    </a>
-                </div>
-
-            {{ else }}
-
-                <div class="col-lg-6 col-md-8 text-center my-sm-1 mx-sm-3 ">
-                    {{ .Content }}
-                </div>
-
-            {{ end }}
-        {{ end }}
-
-    </div>
-
-
-</section>
-
-
-{{- end -}}
-
-
-{{- with $serviceIndex -}}
-
-
-<!-- service Section-->
-<section class="page-section row text-secondary my-1 mx-1" id="services">
-    <div class="container">
-        <!-- About Section Heading-->
-        <h2 class="page-section-heading text-center text-uppercase text-secondary">{{ .Title }}</h2>
-        <!-- Icon Divider-->
-        <div class="divider-custom ">
-            <div class="divider-custom-line"></div>
-            <div class="divider-custom-icon"><i class="mdi mdi-{{ $serviceDividerIcon }}"></i></div>
-            <div class="divider-custom-line"></div>
-        </div>
-    </div>
-
-    {{- if isset .Params "homepagecontent" }}
-    {{ if .Params.homepagecontent }}
-    <div class="row justify-content-sm-center">
-        <div class="col-lg-6 col-md-8 text-center my-sm-1 mx-sm-3 ">
-
-            {{ .Content }}
-
-        </div>
-    </div>
-    {{ end }}
-    {{ end }}
-
-    <!-- About Section Content-->
-    <div class="row justify-content-sm-center">
-
-        {{ range sort .Pages ".Params.Order" }}
-
-        <div class="col-lg-3 mx-lg-1 col-md-5 mx-sm-3 text-center ">
-            {{- if isset .Params "Image" -}}
-                <img class="img-fluid rounded shadow" style="width: 10rem;" src="{{ .Params.Image }}"></img>
-            {{- end -}}
-            <h4>{{ .Title }}</h4>
-            <p class="lead">{{ .Description }}</p>
-            <p>{{ .Params.teaser }}</p>
-
-            {{- if isset .Params "moreinfo" }}
-            {{- if .Params.moreinfo }}
-
-            <div class="text-center mt-4">
-                <a class="btn btn-xl btn-outline-dark" href="{{ .Permalink }}">
-                    <i class="mdi mdi-download mr-2"></i>
-                    More
-                </a>
-            </div>
-
-        {{ end }}
-        {{ end }}
-
-        </div>
-
-        {{end}}
-    </div>
-
-
-</section>
-
-
-{{- end -}}
-
-
-{{- with $teamIndex -}}
-
-<!-- Team Section-->
-<section class="page-section row mb-0 bg-primary text-white" id="team">
-    <div class="container col-12">
-        <!-- Section Heading-->
-        <h2 class="page-section-heading text-center text-uppercase text-white">Our Team</h2>
-
-        <!-- Icon Divider-->
-        <div class="divider-custom divider-light">
-            <div class="divider-custom-line"></div>
-            <div class="divider-custom-icon"><i class="mdi mdi-{{ $teamDividerIcon }}"></i></div>
-            <div class="divider-custom-line"></div>
-        </div>
-    </div>
-
-    <!-- Team Members -->
-    <div class="container col-12 text-center ">
-        <div class="row justify-content-center ">
-            {{ range (where .Pages ".Params.Order" "gt" 0).ByParam "Order"  }}
-
-                {{ $modalName := printf "Team%s" .File.BaseFileName }}
-
-                <div class="col-12 col-sm-5 col-md-4 col-lg-3">
-                    <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#{{ $modalName }}Modal">
-                        <img class="img-fluid rounded shadow" style="width: 10rem;" src="{{ .Params.Image }}"></img>
-                    </div>
-                    <p class="lead">{{ .Title }}</p>
-                </div>
-
-            {{end}}
-        </div>
-    </div>
-
-    <div class="container justify-content-sm-center col-12">
-            
-        {{- if isset .Params "homepagemoreinfo" }}
-            {{- if .Params.homepagemoreinfo }}
-
-                <div class="text-center mt-4">
-                    <a class="btn btn-xl btn-outline-dark" href="{{ .Permalink }}">
-                        <i class="mdi mdi-{{ .Params.dividericon }} mr-2"></i>
-                        {{ .Params.homepagemoreinfo }}
-                    </a>
-                </div>
-
-            {{ else }}
-
-                <div class="col-lg-6 col-md-8 text-center my-sm-1 mx-sm-3 ">
-                    {{ .Content }}
-                </div>
-
-            {{ end }}
-        {{ end }}
-
-    </div>
-
-</section>
-
-{{- end -}}
-
-
-
-{{- range $classIndex.Pages }}
-
-{{ $modalName := printf "Class%s" .File.BaseFileName }}
-
-{{ partial "homepagemodal" (dict "context" . "modalName" $modalName "dividerIcon" $classDividerIcon)}}
-
-{{end -}}
-
-
-{{ range where $teamIndex.Pages ".Params.Order" "gt" 0 }}
-
-{{ $modalName := printf "Team%s" .File.BaseFileName }}
-
-{{ partial "homepageteammodal" (dict "context" . "modalName" $modalName "dividerIcon" $teamDividerIcon)}}
-
-{{end}}
-
-
-{{ partial "footer.html" . }}

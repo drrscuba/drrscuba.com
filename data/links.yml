@@ -1,0 +1,29 @@
+---
+- group: Social media
+  items:
+    - title: Facebook
+      url: https://facebook.com/drrscuba
+      icon: fab fa-facebook
+    - title: Twitter
+      url: https://twitter.com/drrscuba
+      icon: fab fa-twitter
+    - title: Instagram
+      url: https://instagram.com/drrscuba
+      icon: fab fa-instagram
+    - title: Youtube
+      url: https://youtube.com/@drrscuba
+      icon: fab fa-youtube
+    - title: LinkedIn
+      url: https://www.linkedin.com/company/drrscuba
+      icon: fab fa-linkedin
+- group: Contact
+  items:
+    - title: Google
+      url: https://goo.gl/maps/1F2S9aXHqrmY2PU87
+      icon: fab fa-google
+    - title: E-Mail
+      url: mailto:info@drrscuba.com
+      icon: fa fa-envelope
+    - title: (816) 577-2775
+      url: tel:+18165772775
+      icon: fa fa-phone
