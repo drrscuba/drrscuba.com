@@ -2,3 +2,11 @@
 body {
     background-position: center;
 }
+
+.card-columns {
+    column-count: 1;
+
+    @media (min-width: 576px) {
+      column-count: 2;
+    }
+  }

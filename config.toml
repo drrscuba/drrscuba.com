@@ -16,13 +16,14 @@ enableGitInfo = true
   description = "Dive Rinse Repeat Scuba"
   #images = ["logo.jpg"]
   startPageColumns = false
-  welcomeText = "We love SCUBA! Our staff of PADI certified professionals can take you from Open Water Scuba Diver to Master Scuba Diver, and everything in between!"
+  #welcomeText = "We love SCUBA! Our staff of PADI certified professionals can take you from Open Water Scuba Diver to Master Scuba Diver, and everything in between!"
   logo = "img/DRR-Logo-white-medium.png"
 
 [[params.trips]]
-  name = "Belize"
+  name = "Belize - Ambergies Caye"
   activated = true
   url = "https://drrscuba.com/trips/belize-subreeze-suites"
+  image = "https://s3-us-west-2.amazonaws.com/imgds360live/storefront/3545679/social/2025_Belize_Advert.jpg"
 
 # [[params.searchEngines]]
 #   name = "Google"
