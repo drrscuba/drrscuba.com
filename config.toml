@@ -20,10 +20,10 @@ enableGitInfo = true
   logo = "img/DRR-Logo-white-medium.png"
 
 [[params.trips]]
-  name = "Belize - Ambergies Caye"
+  name = "Honduras - Villa on Dunbar Rock"
   activated = true
-  url = "https://drrscuba.com/trips/belize-subreeze-suites"
-  image = "https://s3-us-west-2.amazonaws.com/imgds360live/storefront/3545679/social/2025_Belize_Advert.jpg"
+  url = "https://drrscuba.com/trips/villa-on-dunbar-rock-2026"
+  image = "https://s3-us-west-2.amazonaws.com/imgds360live/storefront/3545679/travel/Guanaja/2026-DunbarRock-Advert.jpg"
 
 # [[params.searchEngines]]
 #   name = "Google"
