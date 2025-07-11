@@ -1,0 +1,13 @@
+---
+- group: Check out our upcoming group travel!
+  items:
+    - name: Honduras - Villa on Dunbar Rock
+      activated: true
+      url: https://drrscuba.com/trips/villa-on-dunbar-rock-2026
+      image: https://imgds360live.s3.amazonaws.com/storefront/3545679/travel/Guanaja/2026-DunbarRock-Advert.jpg
+- group: Learn to Scuba Dive!
+  items:
+    - name: Open Water Diver Course
+      activated: true
+      url: https://drrscuba.com/open-water-scuba-diver
+      image: https://imgds360live.s3.amazonaws.com/storefront/3545679/social/LearnToDive.jpg

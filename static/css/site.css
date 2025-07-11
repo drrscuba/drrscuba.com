@@ -3,11 +3,57 @@ body {
     background-position: top;
     background-attachment: fixed;
 }
-
+/* 
 .card-columns {
     column-count: 1;
 
     @media (min-width: 576px) {
       column-count: 2;
     }
+  } */
+
+
+  
+.card-columns {
+  display:flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  column-gap: 1rem;
+}
+
+.card {
+  opacity: 1;
+  background-color: #ffffff99;
+  flex: 1 1 calc(100% - 20px);
+
+  @media (min-width: 576px) {
+    flex: 1 1 calc(50% - 20px);
   }
+}
+
+a {
+  color: black;
+  font-weight: bold;
+}
+
+a i {
+  color: #27b898;
+  font-weight: bold;
+}
+
+h5 {
+  color: white;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.contact .card-columns .card  {
+  flex: 1 1 calc(50% - 20px);
+  }
+
+
+.btn-primary {
+    color: #fff;
+    background-color: #27b898;
+    border-color: #27b898;
+}

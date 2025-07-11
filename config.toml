@@ -18,30 +18,3 @@ enableGitInfo = true
   startPageColumns = false
   #welcomeText = "We love SCUBA! Our staff of PADI certified professionals can take you from Open Water Scuba Diver to Master Scuba Diver, and everything in between!"
   logo = "img/DRR-Logo-white-medium.png"
-
-[[params.trips]]
-  name = "Honduras - Villa on Dunbar Rock"
-  activated = true
-  url = "https://drrscuba.com/trips/villa-on-dunbar-rock-2026"
-  image = "https://s3-us-west-2.amazonaws.com/imgds360live/storefront/3545679/travel/Guanaja/2026-DunbarRock-Advert.jpg"
-
-# [[params.searchEngines]]
-#   name = "Google"
-#   activated = true
-#   url = "https://www.google.com/search"
-
-# [[params.searchEngines]]
-#   name = "DuckDuckGo"
-#   activated = true
-#   url = "https://duckduckgo.com/"
-
-# [[params.searchEngines]]
-#   name = "Bing"
-#   activated = true
-#   url = "https://www.bing.com/search"
-
-# [[params.searchEngines]]
-#   name = "Baidu"
-#   activated = true
-#   url = "https://baidu.com/s"
-#   searchkey = "wd"

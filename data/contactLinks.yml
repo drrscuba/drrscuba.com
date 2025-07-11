@@ -1,0 +1,15 @@
+---
+- group: Contact Us
+  items:
+    - title: info@drrscuba.com
+      url: mailto:info@drrscuba.com
+      icon: fa fa-envelope
+    - title: (816) 577-2775
+      url: tel:+18165772775
+      icon: fa fa-phone
+    - title: Whatsapp
+      url: https://wa.me/18165772775
+      icon: fab fa-whatsapp
+    - title: Signal
+      url: https://signal.me/#p/+18165772775
+      icon: fab fa-signal-messenger
